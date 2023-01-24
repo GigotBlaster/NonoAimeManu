@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:15:13 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/12 17:49:13 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:36:55 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,12 @@ int		ft_press_x(t_data *game);
 int		ft_key_press(int key, t_data *game);
 void	ft_game_over(t_data *game);
 void	ft_check_winner(t_data *game);
+
+//path
+char	**create_map_tmp(t_data *game);
+void	free_map_tmp(char **map);
+int		is_map_possible_shorten(t_data *data, int *dest, int y, int x);
+int		is_map_possible(t_data *data);
+int		recursive(char **map, int y, int x, int *dest);
 
 #endif

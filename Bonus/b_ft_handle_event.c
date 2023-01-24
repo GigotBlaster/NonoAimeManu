@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:34:53 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/12 11:59:08 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:03:34 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_check_winner(t_data *game)
 {
 	if (game->map.collectible == 0)
 	{
-		write(1, "Congratulations! You win!\n", 26);
+		write(1, "Congratulations! You won!\n", 26);
 		ft_clear_images(game);
 		ft_free_map(game);
 		mlx_destroy_window(game->mlx, game->win);

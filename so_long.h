@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:35:18 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/12 22:35:34 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:37:34 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct s_data
 	void		*mlx;
 	void		*win;
 	t_player	p_pos;
+	int		player_x;
+	int		player_y;
 	t_map		map;
 	t_image		img;
 	t_trap		t_pos;
@@ -126,5 +128,11 @@ int		ft_press_x(t_data *game);
 int		ft_key_press(int key, t_data *game);
 void	ft_game_over(t_data *game);
 void	ft_check_winner(t_data *game);
+
+//path
+int		recursive(char **map_tmp, int y, int x, int *dest);
+void	free_map_tmp(char **map);
+int		is_map_possible_shorten(t_data *data, int *dest, int y, int x);
+int		is_map_possible(t_data *data);
 
 #endif

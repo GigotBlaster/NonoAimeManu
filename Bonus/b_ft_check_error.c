@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:35:10 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/12 19:21:36 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:47:45 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,8 @@ int	ft_check_error(t_data *game, char *file)
 		ft_free_map(game);
 		return (-1);
 	}
+	if (!is_map_possible(game))
+		return (ft_free_map(game), write(2, "Error\nNo valid path. =(\n", 24),
+		free(game->t_pos.y), free(game->t_pos.x), -1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:34:17 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/12 19:35:43 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:43:23 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	{
 		write(2, "Error\nMissing graphical interface.\n", 35);
 		ft_free_map(&game);
-		return (3);
+		return (4);
 	}
 	game.win = mlx_new_window(game.mlx, game.map.width * PIXEL, \
 		game.map.height * PIXEL, "Va chercher !");

@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:34:42 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/12 23:13:56 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:28:59 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	ft_count_map_rows(t_data *game, char *file)
 		free(line);
 	}
 	game->map.height = rows;
-	// printf("Height : %d\n", game->map.height);
 	close(fd);
 }
 
