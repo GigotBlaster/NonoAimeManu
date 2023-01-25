@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:15:13 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/24 18:36:55 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:47:02 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void	ft_change_player_c(t_data *game, int pixel, char dir);
 void	ft_change_player(t_data *game, int pixel, char dir);
 void	ft_create_images(t_data *game);
 void	ft_clear_images(t_data *game);
+size_t	ft_strlen2(const char *s);
 
 //events
 int		ft_press_x(t_data *game);

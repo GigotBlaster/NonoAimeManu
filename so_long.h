@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:35:18 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/24 18:37:34 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:46:50 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,6 @@
 # define LEFT	0xff51
 # define RIGHT	0xff53
 
-typedef struct s_trap
-{
-	int	*x;
-	int	*y;
-}	t_trap;
-
 typedef struct s_map
 {
 	char	**map;
@@ -40,7 +34,6 @@ typedef struct s_map
 	int		height;
 	int		player;
 	int		collectible;
-	int		trap;
 	int		exit;
 }	t_map;
 
@@ -57,7 +50,6 @@ typedef struct s_image
 	void	*collectible;
 	void	*floor;
 	void	*wall;
-	void	*trap;
 	void	*exit;
 }	t_image;
 
@@ -70,7 +62,6 @@ typedef struct s_data
 	int		player_y;
 	t_map		map;
 	t_image		img;
-	t_trap		t_pos;
 	int			moves;
 	int			bone;
 	char		dir;
@@ -102,26 +93,15 @@ void	ft_move_right(t_data *game);
 void	ft_move_left(t_data *game);
 void	ft_move(int key, t_data *game);
 
-//traps
-int		ft_init_traps(t_data *game);
-int		ft_trap_anim(t_data *game);
-int		ft_move_trap_down(t_data *game, int i);
-int		ft_move_trap_left(t_data *game, int i);
-int		ft_move_trap_right(t_data *game, int i);
-int		ft_move_trap_up(t_data *game, int i);
-int		ft_move_trap(t_data *game);
-void	ft_set_traps(t_data *game);
-void	ft_free_traps(t_data *game);
-
 //drawing
 int		ft_render(t_data *game);
 void	ft_create_player(t_data *game, int pixel);
 void	ft_draw_map(t_data *game, int x, int y);
 void	ft_open_exit(t_data *game, int pixel);
-void	ft_change_player_c(t_data *game, int pixel, char dir);
 void	ft_change_player(t_data *game, int pixel, char dir);
 void	ft_create_images(t_data *game);
 void	ft_clear_images(t_data *game);
+size_t	ft_strlen2(const char *s);
 
 //events
 int		ft_press_x(t_data *game);

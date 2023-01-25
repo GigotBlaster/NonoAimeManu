@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_path_bonus.c                                    :+:      :+:    :+:   */
+/*   b_ft_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 18:35:30 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/24 18:35:44 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:36:32 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ int	recursive(char **map, int y, int x, int *dest)
 	map[y][x] = '1';
 	if (y == dest[0] && x == dest[1])
 		return (1);
-	if (map[y][x - 1] != '1')
+	if (map[y][x - 1] != '1' && map[y][x - 1] != 'E')
 		if (recursive(map, y, x - 1, dest))
 			return (1);
-	if (map[y - 1][x] != '1')
+	if (map[y - 1][x] != '1' && map[y - 1][x] != 'E')
 		if (recursive(map, y - 1, x, dest))
 			return (1);
-	if (map[y][x + 1] != '1')
+	if (map[y][x + 1] != '1' && map[y][x + 1] != 'E')
 		if (recursive(map, y, x + 1, dest))
 			return (1);
-	if (map[y + 1][x] != '1')
+	if (map[y + 1][x] != '1'&& map[y + 1][x] != 'E')
 		if (recursive(map, y + 1, x, dest))
 			return (1);
 	return (0);
@@ -81,8 +81,10 @@ int	is_map_possible(t_data *data)
 	int		y;
 	int		x;
 	int		*dest;
+	int		counter;
 
 	y = 0;
+	counter = 0;
 	dest = ft_calloc(2, sizeof(int));
 	if (!dest)
 		return (0);
@@ -92,11 +94,17 @@ int	is_map_possible(t_data *data)
 		while (x < data->map.width)
 		{
 			if (data->map.map[y][x] == 'C' || data->map.map[y][x] == 'E')
+			{
+				if (data->map.map[y][x] == 'C')
+					counter++;
 				if (!is_map_possible_shorten(data, dest, y, x))
 					return (0);
+			}
 			x++;
 		}
 		y++;
 	}
+	if (counter != data->map.collectible)
+		return (0);
 	return (free(dest), 1);
 }

@@ -6,12 +6,12 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:34:58 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/12 11:59:12 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:45:51 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
+#include <stdio.h>
 void	ft_draw_map(t_data *game, int x, int y)
 {
 	if (game->map.map[y][x] == '1')
@@ -44,7 +44,7 @@ void	ft_open_exit(t_data *game, int pixel)
 {
 	mlx_destroy_image(game->mlx, game->img.exit);
 	game->img.exit = mlx_xpm_file_to_image(game->mlx, \
-		"./sprites/Exit.xpm", &pixel, &pixel);
+		"./Bonus/sprites_bonus/Exit.xpm", &pixel, &pixel);
 }
 
 int	ft_render(t_data *game)
@@ -71,4 +71,17 @@ int	ft_render(t_data *game)
 	mlx_string_put(game->mlx, game->win, 3, 12, 0x00000, show);
 	free(show);
 	return (0);
+}
+
+///Strlen2///
+size_t	ft_strlen2(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	if (!s)
+		return (0);
+	while (s[len] != '\n' && s[len])
+		len++;
+	return (len);
 }

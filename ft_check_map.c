@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:35:04 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/24 18:41:53 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:55:35 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int	ft_check_requirements(t_data *game)
 {
 	if (game->map.player != 1)
 	{
-		write(2, "Error\nNeed just one player!\n", 29);
+		write(2, "Error\nNeed one player!\n", 23);
 		return (-1);
 	}
 	if (game->map.exit != 1)
 	{
-		write(2, "Error\nNeed just one exit!\n", 26);
+		write(2, "Error\nNeed one exit!\n", 21);
 		return (-1);
 	}
 	if (game->map.collectible < 1)

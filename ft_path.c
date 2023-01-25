@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:04:50 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/24 18:44:59 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/25 18:14:32 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,3 +102,4 @@ int	is_map_possible(t_data *data)
 	}
 	return (free(dest), 1);
 }
+

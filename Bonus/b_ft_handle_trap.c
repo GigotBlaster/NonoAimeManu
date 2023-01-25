@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:34:37 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/12 19:52:21 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:15:07 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,19 @@ int	ft_trap_anim(t_data *game)
 		{
 			mlx_destroy_image(game->mlx, game->img.trap);
 			game->img.trap = mlx_xpm_file_to_image(game->mlx, \
-			"./sprites/Trap_1.xpm", &pixel, &pixel);
+			"./Bonus/sprites_bonus/Trap_1.xpm", &pixel, &pixel);
 			ft_render(game);
 		}
 		else if (x == 20000)
 		{
 			mlx_destroy_image(game->mlx, game->img.trap);
 			game->img.trap = mlx_xpm_file_to_image(game->mlx, \
-				"./sprites/Trap_1.xpm", &pixel, &pixel);
+				"./Bonus/sprites_bonus/Trap_1.xpm", &pixel, &pixel);
 			ft_render(game);
 			x = 0;
 		}
 		x++;
-	}
+	} 
 	ft_move_trap(game);
 	return (0);
 }
