@@ -6,7 +6,7 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:04:50 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/25 18:34:51 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:38:59 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int	is_map_possible_shorten(t_data *data, int *dest, int y, int x)
 	return (1);
 }
 
-
 int	recursive2(char **map, int y, int x, int *dest)
 {
 	map[y][x] = '1';
@@ -141,4 +140,3 @@ int	is_map_possible(t_data *data)
 	}
 	return (free(dest), 1);
 }
-

@@ -6,28 +6,11 @@
 /*   By: npetitpi <npetitpi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:35:10 by npetitpi          #+#    #+#             */
-/*   Updated: 2023/01/25 15:10:24 by npetitpi         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:28:54 by npetitpi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	ft_check_rectangle(t_data *game)
-{
-	int	y;
-
-	y = 0;
-	while (game->map.map[y])
-	{
-		if (ft_strlen(game->map.map[y]) != (size_t)game->map.width)
-		{
-			write(2, "Error\nMap's not rectangle.\n", 27);
-			return (-1);
-		}
-		y++;
-	}
-	return (0);
-}
 
 int	ft_middle_walls(t_data *game, int y)
 {
@@ -91,7 +74,7 @@ int	ft_check_error(t_data *game, char *file)
 	ft_count_map_rows(game, file);
 	if (ft_set_map_layout(game, file) < 0)
 		return (-1);
-	if (ft_check_rectangle(game) < 0 || ft_check_walls(game) < 0)
+	if (ft_check_walls(game) < 0)
 	{
 		ft_free_map(game);
 		return (-1);
